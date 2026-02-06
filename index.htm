@@ -2,25 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Portafolio de Ingeniero</title>
+    <title>Wiki Intergaláctica</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; text-align: center; padding: 50px; }
-        .tarjeta { background: white; width: 60%; margin: auto; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
-        p { color: #555; font-size: 1.2rem; }
-        .boton { background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px;}
-        .boton:hover { background: #0056b3; }
+        body { font-family: sans-serif; background: #202329; color: white; text-align: center; }
+        h1 { margin-top: 30px; font-size: 3rem; }
+        
+        /* El Contenedor donde JS inyectará las tarjetas */
+        #contenedor-personajes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Estilo de la tarjeta que crearemos con JS */
+        .tarjeta {
+            background: #3c3e44;
+            border-radius: 10px;
+            width: 250px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transition: transform 0.2s;
+        }
+        .tarjeta:hover { transform: scale(1.05); }
+        .tarjeta img { width: 100%; }
+        .info { padding: 15px; }
+        .estado { font-weight: bold; }
+        .vivo { color: #55cc44; }
+        .muerto { color: #d63d2e; }
     </style>
 </head>
 <body>
-    <div class="tarjeta">
-        <h1>Ing. Alumno UPBC</h1>
-        <p>Estudiante de Ingeniería en Tecnologías de la Información</p>
-        <hr>
-        <p>Bienvenido a mi repositorio de prácticas.</p>
-        <p>Aquí documentaré mi avance en la materia de <strong>Tecnologías y Aplicaciones en Internet</strong>.</p>
-        
-        <a href="https://github.com/" class="boton">Ver mi Código en GitHub</a>
-    </div>
+    <h1>Rick & Morty API</h1>
+    <p>Datos obtenidos en tiempo real desde: rickandmortyapi.com</p>
+    
+    <div id="contenedor-personajes"></div>
+
+    <script src="logica.js"></script>
 </body>
 </html>
